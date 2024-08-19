@@ -1,0 +1,57 @@
+@use "../global" as g;
+
+.techSlider { 
+  &__container {
+    background: g.$white;
+    margin: 0 calc(50% - 50vw);
+    transform: rotate(-5deg);
+    white-space: nowrap;
+    position: absolute;
+    bottom: 20%;
+    left: 0;
+    transform-origin: left;
+    // height: 100px;
+    pointer-events: none;
+  }
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+  // gap: 40px;
+  &__item {
+    border-top: 2px dashed g.$black;
+    border-bottom: 2px dashed g.$black;
+    display: flex;
+    gap: 40px;
+    font-size: 35px;
+    font-weight: 700;
+    line-height: 1;
+    padding: 20px 30px 20px 0;
+    font-family: g.$font_MPLUS;
+    div {
+      white-space: nowrap;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      .svg-inline--fa {
+        font-size: 20px;
+        display: block;
+      }
+      span {
+        color: g.$black !important;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background: g.$base_text_color;
+        border-radius: 50%;
+      }
+    }
+  }
+
+}

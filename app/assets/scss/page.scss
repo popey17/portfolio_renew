@@ -1,0 +1,11 @@
+@use "global" as g;
+
+.app{
+  .main {
+    position: relative;
+    .section {
+      padding: 0 3vw;
+      position: relative;
+    }
+  }
+}

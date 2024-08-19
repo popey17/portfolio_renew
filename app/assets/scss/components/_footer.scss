@@ -1,0 +1,34 @@
+@use "../global" as g;
+
+.footer {
+  background: g.$main_background;
+  color:  white;
+  position: sticky;
+  bottom: 0;
+  z-index: -1;
+  padding: 0 3vw;
+  &__inner {
+    height: 100%;
+    width: 100%;
+    padding: 20px 0;
+  }
+  &__top {
+    width: 100%;
+    height: 400px;
+  }
+  &__bottom {
+    width: 100%;
+    text-align: center;
+  }
+  .logo {
+    font-size: 10vw;
+    text-wrap: nowrap;
+    line-height: 1;
+    display: block;
+    letter-spacing: -0.01em;
+    font-weight: 700;
+    color: g.$base_text_color_pale;
+    padding: 0 0 10px 0;
+    border-top: 1px solid g.$base_text_color_pale;
+  }
+}

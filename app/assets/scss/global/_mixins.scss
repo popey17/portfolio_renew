@@ -1,0 +1,81 @@
+//文字コードはutf-8
+@use "variables" as v;
+@use "sass:math";
+
+// BRAKE POINT
+$breakpoints: (
+  'smartphone': 'screen and (max-width: #{v.$bp_smartphone_max})',
+  'tablet': 'screen and (min-width: #{v.$bp_tablet_min}) and (max-width: #{v.$bp_tablet_max})',
+  'pc_x_tablet': 'screen and (min-width: #{v.$bp_tablet_min})',
+  'sp_x_tablet': 'screen and (max-width: #{v.$bp_tablet_max})',
+  'pc_content_size': 'screen and (min-width: #{v.$bp_pc_min}) and (max-width: #{v.$base_content_width})',
+  'pc': 'screen and (min-width: #{v.$bp_pc_min})'
+)
+!default;
+
+@mixin media_queries($breakpoint: smartphone) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+// aspect-ratio
+@mixin aspect-ratio($width, $height, $max-width: none) {
+  overflow: hidden;
+  aspect-ratio: #{$width} / #{$height};
+  @if ($max-width != 'none') {
+    max-width: v.$max-width + px;
+  }
+  >img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  @supports not (aspect-ratio: #{$width} / #{$height}) {
+    position: relative;
+    &::before {
+      float: left;
+      content: "";
+      padding-top: math.div(round(math.div($height , $width) * 100% * 100) , 100);
+    }
+    &::after {
+      display: block;
+      content: "";
+      clear: both;
+    }
+    >img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
+
+// keyframes
+@mixin keyframe_animation($val...) {
+  -moz-animation: $val;
+  -webkit-animation: $val;
+  animation: $val;
+}
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+// font-size
+@mixin fontsize($size: 14) {
+  font-size: $size + px;
+  font-size: math.div($size, 10) + rem;
+}

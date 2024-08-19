@@ -1,0 +1,38 @@
+//文字コードはutf-8
+@charset "UTF-8";
+
+// 使用変数
+//===================================================================
+
+// 画像ディレクトリ
+$dir_img: "/assets/img/";
+
+// ブレークポイント
+$bp_pc_min: 768px;
+$bp_tablet_max: 1000px;
+$bp_tablet_min: 769px;
+$bp_smartphone_max: 768px;
+
+// font
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap');
+$font-poppins: "Poppins", sans-serif;
+$font_quicksand: "Quicksand", sans-serif;
+$font_MPLUS: "M PLUS Rounded 1c", sans-serif;
+
+
+
+// テキストカラー
+$base_text_color: #333;
+$base_text_color_pale: #909090;
+$white: #fff;
+$black: #000;
+$main_background: #1c1c1c;
+$background_white: #f9f9f9;
+
+
+//コンテンツ幅
+$base_content_width: 1280px;
+
+
+//class名の接頭辞
+$prefix_mod: ".mod";

@@ -1,0 +1,13 @@
+@use "../global" as g;
+
+.section {
+  &--contact {
+    background: g.$background_white;
+    height: 100vh;
+    .section {
+      &__inner {
+
+      }
+    }
+  }
+}

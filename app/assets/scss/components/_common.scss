@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+@use "../global" as g;
+
+#{g.$prefix_mod}{
+  &Bp{
+    &Pc{
+      @include g.media_queries(pc){
+        display: inherit;
+      }
+      @include g.media_queries{
+        display: none !important;
+      }
+    }
+    &Tp{
+      @include g.media_queries(pc){
+        display: inherit;
+      }
+      @media screen and (max-width: 1000px){
+        display: none !important;
+      }
+    }
+    &Sp{
+      @include g.media_queries(pc){
+        display: none !important;
+      }
+      @include g.media_queries{
+        display: inherit;
+      }
+    }
+  }
+  
+}

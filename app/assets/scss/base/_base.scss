@@ -1,0 +1,95 @@
+//文字コードはutf-8
+@charset "UTF-8";
+
+@use "../global" as g;
+
+*{
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  @include g.media_queries{
+    scroll-padding-top: 10em;
+  }
+}
+
+body {
+  line-height: 1.8;
+  letter-spacing: 0px;
+  color: g.$base_text_color;
+  word-break: break-all;
+  margin: 0;
+  @include g.fontsize(14);
+  &.scrollLock {
+    overflow: hidden;
+  }
+  background: var(--lightgray);
+  &.scrollLock {
+    overflow: hidden;
+  }
+  &.jsFixed {
+    overflow: hidden;
+  }
+}
+
+a {
+  color: var(--black);
+  text-decoration: none;
+  @include g.media_queries(pc){
+    transition: all 0.3s ease-out;
+  }
+}
+
+figure,p,h1,h2,h3 {
+  margin: 0;
+
+}
+
+ul,li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.main {
+  overflow: hidden!important;
+  padding:0 0 116px 0;
+  @media screen and (max-width:889px){
+    padding: 101px 0 77px;
+  }
+  @include g.media_queries{
+    padding: 101px 0 77px;
+  }
+}
+
+.pageWrapper{
+  overflow: hidden;
+  @include g.media_queries{
+    padding: 110px 0 0;
+  }
+}
+
+//css for lenis scroll
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
