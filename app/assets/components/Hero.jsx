@@ -6,26 +6,13 @@ import { Environment } from '@react-three/drei'
 import { Lightformer } from '@react-three/drei';
 import HomeModal from './HomeModal';
 
-function Hero({setHeroScroll}) {
-
-  const { scrollYProgress } = useScroll({
-    offset: ["start start", "end end"],
-  });
+function Hero({}) {
   
 
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    setHeroScroll(latest);
-  
-  })
-
-  const scale = useTransform(scrollYProgress, [0, 0.4], [1, 0.85]);
-  const borderRadius = useTransform(scrollYProgress, [0, 0.2], [0, 50]);
-  const zIndex = useTransform(scrollYProgress, [0, 0.4], [0, -1]);
-  
 
   return (
     <>
-    <motion.section style={{scale, borderRadius, zIndex}} className={`${style.section} ${style['section--hero']}`}>
+    <section className={`${style.section} ${style['section--hero']}`}>
       <div className={style.heroContent__container}>
         <div className={style.heroContent}>
           <h2 className={style.heroTitle}>
@@ -62,7 +49,7 @@ function Hero({setHeroScroll}) {
         </div>
         <span>SCROLL DOWN</span>
       </div>
-    </motion.section>
+    </section>
     </>
   )
 }

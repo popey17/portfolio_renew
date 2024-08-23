@@ -2,11 +2,11 @@
 
 .techSlider { 
   &__container {
-    background: g.$white;
+    // background: g.$white;
     margin: 0 calc(50% - 50vw);
-    transform: rotate(-5deg);
+    // transform: rotate(-5deg);
     white-space: nowrap;
-    position: absolute;
+    // position: absolute;
     bottom: 20%;
     left: 0;
     transform-origin: left;
@@ -18,11 +18,11 @@
   align-items: center;
   // gap: 40px;
   &__item {
-    border-top: 2px dashed g.$black;
-    border-bottom: 2px dashed g.$black;
+    border-top: 2px dashed g.$white;
+    border-bottom: 2px dashed g.$white;
     display: flex;
     gap: 40px;
-    font-size: 35px;
+    font-size: 50px;
     font-weight: 700;
     line-height: 1;
     padding: 20px 30px 20px 0;
@@ -38,17 +38,20 @@
         display: block;
       }
       span {
-        color: g.$black !important;
+        color: g.$white !important;
         display: flex;
         align-items: center;
         gap: 20px;
+        img {
+          filter: invert(1);
+        }
       }
       &::before {
         content: '';
         display: inline-block;
         width: 20px;
         height: 20px;
-        background: g.$base_text_color;
+        background: g.$white;
         border-radius: 50%;
       }
     }

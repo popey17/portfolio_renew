@@ -1,5 +1,4 @@
 'use client';
-import Image from "next/image";
 import style from '@/app/assets/scss/style.module.scss';
 import Lenis from "lenis";
 import { useEffect, useRef, useState} from "react";
@@ -10,13 +9,16 @@ import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import Work from "./assets/components/Works";
 import Contact from "./assets/components/Contact";
 import Footer from "./assets/components/Footer";
+import { Preload } from '@react-three/drei';
+import Preloader from './assets/components/Preloader';
 
 
 
 export default function Home() {
 
   const [heroScroll, setHeroScroll] = useState();
-  console.log(heroScroll);
+  const [isLoading, setIsLoading] = useState(true);
+  console.log(isLoading);
   
 
   useEffect(() => {
@@ -30,10 +32,19 @@ export default function Home() {
     requestAnimationFrame(raf);
   }, []);
 
+  useEffect(() => {
+    setTimeout( () => {
+      setIsLoading(false);
+    }, 3000)
+  }, []);
+
+
   return (
     <>
     <Nav heroScroll={heroScroll} />
     <motion.main className={style.main}>
+      {isLoading && <Preloader/>}
+      {/* <Preloader/> */}
       <Hero setHeroScroll={setHeroScroll}/>
       <About />
       <Work />

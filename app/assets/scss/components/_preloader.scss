@@ -1,0 +1,17 @@
+@use "../global" as g;
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  display: flex;
+  span {
+    width: calc(100% / 4);
+    height: 100vh;
+    background: g.$main_background;
+    display: block;
+  }
+}

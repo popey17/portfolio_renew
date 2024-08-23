@@ -1,6 +1,7 @@
 @use "../global" as g;
 
 .section {
+  height: 100vh;
   &--work {
     background: g.$background_white;
     padding: 0 2vw !important;

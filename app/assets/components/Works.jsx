@@ -1,8 +1,13 @@
 "use client";
 import style from '@/app/assets/scss/style.module.scss';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import workImg from '@/public/assets/img/common/200x133.png';
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+
 function Work() {
   const [flippedIndex, setFlippedIndex] = useState(null);
 
@@ -17,10 +22,16 @@ function Work() {
 
     return () => clearInterval(intervalId); 
   }, []);
+
+  const work = useRef();
+
+
+  gsap.registerPlugin(useGSAP);
+
   
   return (
 
-    <section className={`${style.section} ${style['section--work']}`} id='work'>
+    <section ref={work} className={`${style.section} ${style['section--work']}`} id='work'>
       <div className={style.section__inner}>
         <h2 className={style.sectionTitle}>My Works</h2>
         <div className={style.work}>

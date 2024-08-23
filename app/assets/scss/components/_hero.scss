@@ -5,10 +5,11 @@
     background: g.$background_white;
     height: 100vh;
     pointer-events: none;
-    position: sticky !important;
-    top: 0;
+    position: fixed !important;
+    inset: 0;
     transform-origin: bottom;
     overflow: hidden;
+    z-index: -1;
     .heroContent {
       grid-column: 2/ span 9;
       align-self: center;

@@ -7,7 +7,6 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import Image from 'next/image';
 import NextIcon from  "@/public/assets/img/common/icon_nextJs.svg";
-    
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 
