@@ -15,10 +15,6 @@ function About() {
   const section = useRef();
   const text = useRef();
   const paragraph = useRef();
-
-  
-  
-  
   
   gsap.registerPlugin(useGSAP);
   gsap.registerPlugin(ScrollTrigger);
@@ -33,7 +29,7 @@ function About() {
         start: "top 70%",
         end: "top 20%",
         scrub: true,
-        markers: true
+        // markers: true
       }
     })
   },[]);
