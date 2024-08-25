@@ -46,6 +46,20 @@
         font-weight: 600;
         span {
           display: inline-block;
+          .circled {
+            position: relative;
+            overflow: visible;
+            &::before{
+              content: '';
+              display: inline-block;
+              width: 110%;
+              height: 105%;
+              left: -5%;
+              position: absolute;
+              background: url('/assets/img/common/img_circle.png') no-repeat center/contain;
+              z-index: 2;
+            }
+          }
         }
       }
     }

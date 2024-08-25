@@ -11,6 +11,9 @@ import Contact from "./assets/components/Contact";
 import Footer from "./assets/components/Footer";
 import { Preload } from '@react-three/drei';
 import Preloader from './assets/components/Preloader';
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 
 
@@ -18,8 +21,23 @@ export default function Home() {
 
   const [heroScroll, setHeroScroll] = useState();
   const [isLoading, setIsLoading] = useState(true);
-  console.log(isLoading);
+  // console.log(isLoading);
   
+  const main = useRef();
+  gsap.registerPlugin(useGSAP);
+  gsap.registerPlugin(ScrollTrigger);
+
+  useGSAP(() => {
+    ScrollTrigger.create({
+      trigger: main.current,
+      start: "top top",
+      end: "bottom bottom",
+      onUpdate: (self) => {
+        let scrollPercentage = self.progress * 100;
+        setHeroScroll(scrollPercentage);
+      }
+    });
+  });
 
   useEffect(() => {
     const lenis = new Lenis();
@@ -28,7 +46,6 @@ export default function Home() {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
-  
     requestAnimationFrame(raf);
   }, []);
 
@@ -40,18 +57,17 @@ export default function Home() {
 
 
   return (
-    <>
+    <div ref={main}>
     <Nav heroScroll={heroScroll} />
     <motion.main className={style.main}>
       {isLoading && <Preloader/>}
-      {/* <Preloader/> */}
-      <Hero setHeroScroll={setHeroScroll}/>
+      <Hero/>
       <About />
       <Work />
       <Contact />
-      {heroScroll> 0.5 && <Footer />}
+      {heroScroll> 62 && <Footer />}
 
     </motion.main>
-    </>
+    </div>
   );
 }

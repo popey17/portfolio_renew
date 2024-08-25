@@ -5,13 +5,9 @@ import Mainlogo from './Mainlogo';
 
 
 function Nav({heroScroll}) {
-
-  console.log(heroScroll);
-  
-  
-  
+    
   return (
-    <header className={`${style.header} ${heroScroll > 0.175 && heroScroll < 0.54 ? style['header--white'] : ''}`}>
+    <header className={`${style.header} ${heroScroll > 16.9 && heroScroll < 73 ? style['header--white'] : ''}`}>
       <div className={style.header__logo}>
         <h1 className={style.header__logo__left}>
           <Mainlogo/>

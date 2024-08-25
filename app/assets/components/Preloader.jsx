@@ -13,7 +13,7 @@ const Preloader = () => {
   gsap.registerPlugin(useGSAP);
 
   let tl = gsap.timeline();
-  console.log(cols.current);
+  // console.log(cols.current);
   
   // let cols = gsap.utils.toArray(col.current);
   

@@ -19,7 +19,7 @@ function Hero({}) {
             I&apos;m <span>Aung Myat Kyaw</span>,
           </h2>
           <div className={style.heroDescription}>
-            <span>Front-end developer</span>
+            <span><span className={style.circled}>Front-end</span> developer</span>
             <span>and full stack</span><br/>
             <span>web developer.</span>
           </div>

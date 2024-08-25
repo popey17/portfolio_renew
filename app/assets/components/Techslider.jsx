@@ -33,7 +33,7 @@ const TechSlider = () => {
     gsap.set(firstSlider.current, {xPercent: xPercent})
     gsap.set(secondSlider.current, {xPercent: xPercent})
     requestAnimationFrame(animate);
-    xPercent += 0.03 * direction;
+    xPercent += 0.02 * direction;
   }
   
 
@@ -68,7 +68,7 @@ const TechSlider = () => {
           <div><span><FontAwesomeIcon icon={faPhp} />PHP</span></div>
           <div><span><FontAwesomeIcon icon={faGitAlt} />Git</span></div>
           <div><span><FontAwesomeIcon icon={faReact} />React</span></div>
-          <div><span><Image src={NextIcon} width={35} height={35} alt=''/>Next Js</span></div>
+          <div><span><Image src={NextIcon} width={80} height={80} alt=''/>Next JS</span></div>
           <div><span><FontAwesomeIcon icon={faLaravel} />Laravel</span></div>
           <div><span><FontAwesomeIcon icon={faAws} />AWS</span></div>
         </div>
@@ -79,7 +79,7 @@ const TechSlider = () => {
           <div><span><FontAwesomeIcon icon={faPhp} />PHP</span></div>
           <div><span><FontAwesomeIcon icon={faGitAlt} />Git</span></div>
           <div><span><FontAwesomeIcon icon={faReact} />React</span></div>
-          <div><span><Image src={NextIcon} width={35} height={35} alt=''/>Next Js</span></div>
+          <div><span><Image src={NextIcon} width={80} height={80} alt=''/>Next JS</span></div>
           <div><span><FontAwesomeIcon icon={faLaravel} />Laravel</span></div>
           <div><span><FontAwesomeIcon icon={faAws} />AWS</span></div>
         </div>
