@@ -12,6 +12,7 @@ const Preloader = () => {
   const numbersList = useRef();
   const textUpper = useRef();
   const textLower = useRef();
+  const textNumber = useRef();  
 
   const numbers = Array.from({ length: 101 }, (_, i) => (i).toString().padStart(3, '0'));
   
@@ -23,12 +24,20 @@ const Preloader = () => {
   let tl = gsap.timeline();
   
   useGSAP(() => {
-    tl.from(textUpper.current, { duration: 1, xPercent: -110, opacity:0, repeat: 0, delay: 0.1 });
-    tl.from(textLower.current, { duration: 1, xPercent: 110, opacity:0,  repeat: 0},'<');
-    tl.to(numbersList.current, 
-      { duration: 1, yPercent: -12500, repeat: 0 ,});
-    tl.to(preloaderText.current, { duration: 1, yPercent: -110, repeat: 0}, '>0.5');
-    tl.to(cols.current, { duration: 1.5, yPercent: -110, repeat: 0, stagger: 0.1 }, '<');
+    
+    tl.fromTo(textUpper.current, { xPercent: -100, opacity: 0 }, { duration: 1, xPercent: 0, opacity: 1, repeat: 0, delay: 0.1 });
+    tl.fromTo(textLower.current, { xPercent: 100, opacity: 0 }, { duration: 1, xPercent: 0, opacity: 1, repeat: 0 }, '<');
+    tl.to(textNumber.current, { duration: 1, opacity: 1, repeat: 0 }, '<');
+
+    tl.to(numbersList.current, {
+      duration: 2.5,
+      yPercent: -12500,
+      repeat: 0,
+      ease: "expo.inOut",
+    });
+
+    tl.to(preloaderText.current, { duration: 1, yPercent: -110, repeat: 0}, '>0.1');
+    tl.to(cols.current, { duration: 1, yPercent: -110, repeat: 0, stagger: 0.1 }, '<');
     tl.to(preloader.current, { duration: 1, opacity: 0, display: 'none' });
 });
   
@@ -37,7 +46,7 @@ const Preloader = () => {
       <div ref={preloaderText} className={style.preloader__text}>
         <div className={style.preloader__text__upper}>
           <span ref={textUpper} className={style.text}>Hello</span>
-          <span className={style.number__container}>&lt;
+          <span ref={textNumber} className={style.number__container}>&lt;
             <span ref={numbersList} className={style.number}>
             {numbers.map((number, i) => (
               <span key={i} >{number}</span>

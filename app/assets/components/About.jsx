@@ -1,12 +1,13 @@
 "use client";
 import style from '@/app/assets/scss/style.module.scss';
-import useMousePosition from '@/app/assets/utils/useMousePosition';
 import { useState , useRef } from 'react';
 import Techslider from '@/app/assets/components/Techslider';
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from 'split-type';
+import Image from 'next/image';
+import aboutImg from '@/public/assets/img/page/img_profile.jpg';
 
 
 
@@ -26,8 +27,8 @@ function About() {
       stagger: 0.1,
       scrollTrigger: {
         trigger: paragraph.current,
-        start: "top 70%",
-        end: "top 20%",
+        start: "top 60%",
+        end: "top 10%",
         scrub: true,
         // markers: true
       }
@@ -42,7 +43,7 @@ function About() {
           scrollTrigger: {
             trigger: section.current,
           start: " top top",
-          end: "40% end",
+          end: "30% end",
           // markers: true,
           pinSpacing: false,
           toggleActions: "play none none reverse",
@@ -82,6 +83,9 @@ function About() {
           </div>
         </div>
         <section className={`${style.section} ${style['section--about']}`}>
+          <figure className={style.profileImg}>
+            <Image src={aboutImg} alt="about"  width={600} height={818}/>
+          </figure>
           <div className={style.aboutText}>
             <h2 className={style.sectionTitle}>Who am I.</h2>
             <p ref={paragraph}>

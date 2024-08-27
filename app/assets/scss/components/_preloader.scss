@@ -8,7 +8,8 @@
   height: 100vh;
   z-index: 9999;
   display: flex;
-  // font-family: g.$font_eczar;
+  font-family: g.$font-poppins;
+  font-weight: 700;
   &__text {
     position: absolute;
     width: fit-content;
@@ -31,7 +32,7 @@
       align-items: flex-end;
       gap: 20px;
       .text {
-        transform: translate(0, 0);
+        opacity: 0;
       }
       .number {
         display: flex;
@@ -43,6 +44,7 @@
           align-items: center;
           gap: 30px;
           overflow: hidden;
+          opacity: 0;
         }
         span {
           font-size: 90px;
@@ -51,6 +53,10 @@
           justify-content: center;
         }
       }
+    }
+    &__lower {
+      opacity: 0;
+      font-weight: 400;
     }
   }
   .cols {

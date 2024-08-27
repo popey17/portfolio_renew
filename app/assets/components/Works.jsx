@@ -2,49 +2,104 @@
 import style from '@/app/assets/scss/style.module.scss';
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
-import workImg from '@/public/assets/img/common/200x133.png';
+import workImg1 from '@/public/assets/img/page/img_work01.jpg';
+import workImg2 from '@/public/assets/img/page/img_work02.jpg';
+import workImg3 from '@/public/assets/img/page/img_work03.jpg';
+import workImg4 from '@/public/assets/img/page/img_work04.jpg';
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from 'next/link';
+import WorkBtn from './WorkBtn';
 
 
 function Work() {
-  const [flippedIndex, setFlippedIndex] = useState(null);
-
-  useEffect(() => {
-    const flipCard = () => {
-      const randomIndex = Math.floor(Math.random() * 12); 
-      setFlippedIndex(randomIndex);
-    };
-
-    flipCard();
-    const intervalId = setInterval(flipCard, 3000); 
-
-    return () => clearInterval(intervalId); 
-  }, []);
-
-  const work = useRef();
-
+  const workImg = useRef([]);
+  const work = useRef(null);
 
   gsap.registerPlugin(useGSAP);
+  gsap.registerPlugin(ScrollTrigger);
+
+  useGSAP(() => {
+    const images = gsap.utils.toArray(workImg.current);
+    
+    gsap.to(images, {
+      scrollTrigger: {
+        trigger: work.current,
+        start: "top top",
+        end: "bottom bottom",
+        scrub: true,
+        // markers: true
+      },
+      clipPath: 'inset(0% 0% 100% 0%)',
+      stagger: 0.5
+    })
+  },[]);
+
+
+  
 
   
   return (
 
-    <section ref={work} className={`${style.section} ${style['section--work']}`} id='work'>
+    <section className={`${style.section} ${style['section--work']}`} id='work'>
       <div className={style.section__inner}>
         <h2 className={style.sectionTitle}>My Works</h2>
-        <div className={style.work}>
-        {[...Array(12)].map((_, index) => (
-            <div key={index} className={style.work__item}>
-              <div className={`${style.work__item__inner} ${flippedIndex === index ? style.flipped : ''}`}>
-                <div className={style.front}>Front</div>
-                <div className={style.back}>
-                  <Image src={workImg} alt="work" width={200} height={133} />
+        <div className={style.work__Container}>
+          <div ref={work} className={style.work}>
+            <div className={style.work__left}>
+              <div className={style.work__left__item}>
+                <p className={style.title}>
+                  3js Explode Text
+                </p>
+                <div className={style.btnContainer}>
+                  <WorkBtn href='#' >Demo</WorkBtn>
+                  <WorkBtn href='#' >Source Code</WorkBtn>
+                </div>
+              </div>
+              <div className={style.work__left__item}>
+                <p className={style.title}>
+                  Awward Winning <br/>Image Reveal
+                </p>
+                <div className={style.btnContainer}>
+                <WorkBtn href='#' >Demo</WorkBtn>
+                <WorkBtn href='#' >Source Code</WorkBtn>
+                </div>
+              </div>
+              <div className={style.work__left__item}>
+                <p className={style.title}>
+                  3js Dragon
+                </p>
+                <div className={style.btnContainer}>
+                <WorkBtn href='#' >Demo</WorkBtn>
+                <WorkBtn href='#' >Source Code</WorkBtn>
+                </div>
+              </div>
+              <div className={style.work__left__item}>
+                <p className={style.title}>
+                  Patient Record<br/> System
+                </p>
+                <div className={style.btnContainer}>
+                <WorkBtn href='#' >Demo</WorkBtn>
+                <WorkBtn href='#' >Source Code</WorkBtn>
                 </div>
               </div>
             </div>
-          ))}
+            <div className={style.work__right}>
+              <figure ref={(el) => (workImg.current[0] = el)} className={style.work__right__item}>
+                <Image src={workImg1} alt="work" />
+              </figure>
+              <figure ref={(el) => (workImg.current[1] = el)} className={style.work__right__item}>
+                <Image src={workImg2} alt="work" />
+              </figure>
+              <figure ref={(el) => (workImg.current[2] = el)} className={style.work__right__item}>
+                <Image src={workImg3} alt="work" />
+              </figure>
+              <figure className={style.work__right__item}>
+                <Image src={workImg4} alt="work" />
+              </figure>
+            </div>
+          </div>
         </div>
       </div>
     </section>

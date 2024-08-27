@@ -1,119 +1,97 @@
 @use "../global" as g;
 
 .section {
-  height: 100vh;
   &--work {
     background: g.$background_white;
-    padding: 0 2vw !important;
-    border-bottom: 1px outset black;
+    padding: 0 6vw !important;
     .section {
       &__inner {
-        border-left: 1px outset black;
-        border-right: 1px outset black;
         margin: 0 auto;
         padding: 9vh 0;
         .sectionTitle {
-          @include g.fontsize(60);
+          font-size: 8vw;
           color: g.$base_text_color;
           line-height: 1.2;
-          border-top: 1px outset black;
-          text-align: center;
         }
         .work {
-          border-top: 1px outset black;
-          border-bottom: 1px outset black;
           display: flex;
-          justify-content: space-between;
-          flex-wrap: wrap;
-          flex: 1;
-          &__item {
-            width: calc(100% / 4);
-            border-width: 1px;
-            border-color: black;
-            aspect-ratio: 2 / 1.33;
-            position: relative;
-            &::after {
-              content: '';
-              position: absolute;
-              right: 10px;
-              bottom: 10px;
-              width: 10px;
-              height: 10px;
-              border-right: 1px solid black;
-              border-bottom: 1px solid black;
+          &__left {
+            width: 60%;
+            &__item {
+              height: 100vh;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              padding: 0 0 0 80px;
+              .title {
+                font-size: 60px;
+                color: g.$base_text_color;
+                margin-bottom: 20px;
+                font-weight: 600;
+                line-height: 1.3;
+              }
+              .btnContainer {
+                display: flex;
+                gap: 20px;
+                .btn {
+                  font-size: 20px;
+                  display: flex;
+                  gap: 10px;
+                  align-items: center;
+                  &::after{
+                    content: '';
+                    display: block;
+                    width: 20px;
+                    aspect-ratio: 1;
+                    background: url('/assets/img/common/img_arrow.svg') no-repeat center/contain;
+                  }
+                }
+              }
             }
-            &::before {
-              content: '';
+          }
+          &__right {
+            width: 40%;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            &__item {
+              @include g.aspect-ratio(400 , 300);
               position: absolute;
-              left: 10px;
-              top: 10px;
-              width: 10px;
-              height: 10px;
-              border-top: 1px solid black;
-              border-left: 1px solid black;
-            }
-            &__inner {
-              width: 100%;
-              height: 100%;
-              border-radius: 5px;
-              position: absolute;
-              top: 0;
+              top: 50%;
               left: 0;
-              transform-style: preserve-3d;
-              transition: transform 1s ease-in-out;
-              padding: 10px;
-              &.flipped {
-                transform: rotateX(180deg);
+              transform: translate(0 , -50%);
+              clip-path: inset(0 0 0 0);
+              border-radius: 8px;
+              overflow: hidden;
+              &:nth-child(1) {
+                z-index: 4;
               }
-              .front {
-                position: absolute;
-                width: calc(100% - 20px);
-                height: calc(100% - 20px);
-                backface-visibility: hidden;
-                padding: 5px;
-                border-radius: 5px;
-                font-size: 2vw;
-                font-weight: 500;
-                letter-spacing: -0.04em;
-                font-family: g.$font-poppins;
+              &:nth-child(2) {
+                z-index: 3;
               }
-              .back {
-                position: absolute;
-                width: calc(100% - 20px);
-                height: calc(100% - 20px);                
-                backface-visibility: hidden;
-                transform: rotateX(-180deg);
-                padding: 5px;
-                border-radius: 5px;
-                @include g.aspect-ratio(200 , 133);
+              &:nth-child(3) {
+                z-index: 2;
+              }
+              &:nth-child(4) {
+                z-index: 1;
               }
             }
-            &:hover {
-              .work__item__inner {
-                transform: rotateX(180deg);
-              }
-            }
-            &:nth-child(1),
-            &:nth-child(2),
-            &:nth-child(3),
-            &:nth-child(5),
-            &:nth-child(6),
-            &:nth-child(7)
-            {
-              border-style: none solid solid none;
-            }
-            &:nth-child(4),
-            &:nth-child(8){
-              border-style: none none solid none;
-            }
-            &:nth-child(9),
-            &:nth-child(10),
-            &:nth-child(11) {
-              border-style: none solid none none;
-            }
+
           }
         }
       }
+    }
+    &::before {
+      content: '';
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: url('/assets/img/common/img_noise04.png') repeat;
+      background-size: 200px;
+      opacity: 1;
+      pointer-events: none;
     }
   }
 }

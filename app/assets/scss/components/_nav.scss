@@ -44,7 +44,7 @@
     align-items: flex-end;
     color: g.$white;
     gap: 2px;
-    cursor: pointer;
+    cursor: url('/assets/img/common/cursor_pointer.svg') 13 12, pointer;
     &__left {
       font-size: 0;
       width: 45px;
@@ -78,7 +78,7 @@
     width: 40px;
     height: 24px;
     position: relative;
-    cursor: pointer;
+    cursor: url('/assets/img/common/cursor_pointer.svg') 13 12, pointer;
     overflow: hidden;
     span {
       display: block;

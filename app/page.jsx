@@ -21,7 +21,7 @@ export default function Home() {
 
   const [heroScroll, setHeroScroll] = useState();
   const [isLoading, setIsLoading] = useState(true);
-  // console.log(isLoading);
+  console.log(heroScroll);
   
   const main = useRef();
   gsap.registerPlugin(useGSAP);
@@ -52,7 +52,7 @@ export default function Home() {
   useEffect(() => {
     setTimeout( () => {
       setIsLoading(false);
-    }, 3000)
+    }, 5000)
   }, []);
 
 
@@ -60,8 +60,8 @@ export default function Home() {
     <div ref={main}>
     <Nav heroScroll={heroScroll} />
     <motion.main className={style.main}>
-      {/* {isLoading && <Preloader/>} */}
-      <Preloader />
+      {isLoading && <Preloader/>}
+      {/* <Preloader /> */}
       <Hero/>
       <About />
       <Work />
