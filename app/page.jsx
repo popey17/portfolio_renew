@@ -60,7 +60,8 @@ export default function Home() {
     <div ref={main}>
     <Nav heroScroll={heroScroll} />
     <motion.main className={style.main}>
-      {isLoading && <Preloader/>}
+      {/* {isLoading && <Preloader/>} */}
+      <Preloader />
       <Hero/>
       <About />
       <Work />

@@ -8,7 +8,52 @@
   height: 100vh;
   z-index: 9999;
   display: flex;
-  span {
+  // font-family: g.$font_eczar;
+  &__text {
+    position: absolute;
+    width: fit-content;
+    height: 100%;
+    inset: 0;
+    font-size: 2rem;
+    color: g.$white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    margin: 0 auto;
+    gap: 20px;
+    span {
+      font-size: 60px;
+      line-height: 1;
+    }
+    &__upper {
+      display: flex;
+      align-items: flex-end;
+      gap: 20px;
+      .text {
+        transform: translate(0, 0);
+      }
+      .number {
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        height: 80px;
+        &__container {
+          display: flex;
+          align-items: center;
+          gap: 30px;
+          overflow: hidden;
+        }
+        span {
+          font-size: 90px;
+          display: block;
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+  }
+  .cols {
     width: calc(100% / 4);
     height: 100vh;
     background: g.$main_background;

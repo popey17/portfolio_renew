@@ -1,4 +1,5 @@
 import style from '@/app/assets/scss/style.module.scss';
+import FireArt from '@/app/assets/components/FireArt';
 
 
 const Footer = () => {
@@ -7,6 +8,7 @@ const Footer = () => {
 
       <div className={style.footer__inner}>
         <div className={style.footer__top}>
+          <FireArt />
         </div>
         <div className={style.footer__bottom}>
           <div className={style.logo}>
