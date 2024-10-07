@@ -28,7 +28,7 @@ function About() {
       scrollTrigger: {
         trigger: paragraph.current,
         start: "top 60%",
-        end: "top 10%",
+        end: "top 30%",
         scrub: true,
         // markers: true
       }

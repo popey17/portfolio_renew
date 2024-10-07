@@ -65,7 +65,7 @@ export default function Home() {
       <Hero/>
       <About />
       <Work />
-      <Contact />
+      {/* <Contact /> */}
       {heroScroll> 62 && <Footer />}
 
     </motion.main>

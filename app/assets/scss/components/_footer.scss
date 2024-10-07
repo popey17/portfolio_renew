@@ -2,12 +2,12 @@
 
 .footer {
   // background: g.$main_background;
-  background: g.$white;
+  background: g.$main_background;
   color:  white;
   color: g.$black;
   position: sticky;
   bottom: 0;
-  z-index: -1;
+  // z-index: -1;
   padding: 0 3vw;
   &__inner {
     height: 100%;
@@ -25,6 +25,16 @@
       font-size: 2vw;
       font-weight: 700;
       color: rgb(144, 144, 144);
+      .social {
+        display: flex;
+        gap: 20px;
+        a {
+          color: rgb(144, 144, 144);
+          &:hover {
+            color: rgb(255, 255, 255);
+          }
+        }
+      }
     }
     &__right {
       aspect-ratio: 1010/666;
@@ -36,16 +46,6 @@
         path {
           fill: rgb(144, 144, 144);
           position: relative;
-          // &::after {
-          //   content: 'hello';
-          //   position: absolute;
-          //   top: 0;
-          //   left: 0;
-          //   width: 100px;
-          //   height: 30px;
-          //   background: rgba(0, 0, 0, 0.5);
-          //   z-index: 1;
-          // }
         }
       }
     }

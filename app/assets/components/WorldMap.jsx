@@ -26,13 +26,14 @@ const WorldMap = () => {
       const targetPath = document.getElementById(randomId);
       
 
-      targetPath.style.fill = 'rgb(0, 0, 0)';
+      targetPath.style.fill = 'rgb(255, 255, 255)';
       // randomPath.style.transform = 'scale(5)';
       // randomPath.style.transformOrigin = 'center';
       // randomPath.style.transition = 'transform 1s';
       
 
       setTimeout(() => {
+        // randomPath.style.fill = 'rgb(144, 144, 144)';
         randomPath.style.fill = 'rgb(144, 144, 144)';
       }, 1000);
     };

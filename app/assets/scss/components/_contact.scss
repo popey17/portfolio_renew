@@ -4,6 +4,7 @@
   &--contact {
     background: g.$main_background;
     height: 100vh;
+    z-index: 2;
     .section {
       &__inner {
         display: flex;

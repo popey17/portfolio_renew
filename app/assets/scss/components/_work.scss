@@ -4,6 +4,8 @@
   &--work {
     background: g.$background_white;
     padding: 0 6vw !important;
+    z-index: 2;
+    // overflow: hidden;
     .section {
       &__inner {
         margin: 0 auto;
@@ -13,6 +15,7 @@
           color: g.$base_text_color;
           line-height: 1.2;
           text-align: center;
+          overflow: hidden;
           span {
             display: inline-block;
           }
