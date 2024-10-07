@@ -65,7 +65,7 @@ const FireArt = () => {
   }, [size.width, size.height]);
 
   return (
-    <div style={{ margin: 0, padding: 0, overflow: 'hidden', color: 'white', position: 'relative', width: '100%', height: '400px' }}>
+    <div style={{ margin: 0, padding: 0, overflow: 'hidden', color: 'black', position: 'relative', width: '100%', height: '400px' }}>
       <pre ref={fireRef} style={{ 
         position: 'absolute', 
         top: 0, 

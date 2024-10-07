@@ -6,7 +6,30 @@
     height: 100vh;
     .section {
       &__inner {
-
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        .map  {
+          &__container {
+            svg {
+              path {
+                fill: #f5f5f5;
+                &[title="Thailand"] {
+                  fill: rgb(107, 107, 107);
+                }
+                &:hover {
+                  fill: rgb(107, 107, 107);
+                }
+              }
+            }
+          }
+        }
+      }
+      &__content {
+        color: g.$white;
+        display: flex;
+        width: 100%;
       }
     }
     &::before {

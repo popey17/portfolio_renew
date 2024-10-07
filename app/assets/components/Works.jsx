@@ -16,9 +16,28 @@ import WorkBtn from './WorkBtn';
 function Work() {
   const workImg = useRef([]);
   const work = useRef(null);
+  const titleLeft = useRef(null);
+  const titleRight = useRef(null);
+  const sectionTitle = useRef();
 
   gsap.registerPlugin(useGSAP);
   gsap.registerPlugin(ScrollTrigger);
+
+  useGSAP(() => {
+    let tl = gsap.timeline();
+
+    tl.from(titleRight.current, { x: 200 });
+    tl.from(titleLeft.current, { x: -200 }, '<');
+
+    ScrollTrigger.create({
+      trigger: sectionTitle.current,
+      start: "top 70%",
+      end: "bottom bottom",
+      scrub: 2,
+      // markers: true,
+      animation: tl
+    });
+  },[]);
 
   useGSAP(() => {
     const images = gsap.utils.toArray(workImg.current);
@@ -44,7 +63,9 @@ function Work() {
 
     <section className={`${style.section} ${style['section--work']}`} id='work'>
       <div className={style.section__inner}>
-        <h2 className={style.sectionTitle}>My Works</h2>
+        <h2 ref={sectionTitle} className={style.sectionTitle}>
+          <span ref={titleLeft}>My</span>&nbsp;<span ref={titleRight}>Works</span>
+        </h2>
         <div className={style.work__Container}>
           <div ref={work} className={style.work}>
             <div className={style.work__left}>

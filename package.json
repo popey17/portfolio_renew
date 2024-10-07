@@ -22,6 +22,7 @@
     "lenis": "^1.1.9",
     "leva": "^0.9.35",
     "next": "^14.2.7",
+    "open-simplex-noise": "^2.5.0",
     "react": "^18",
     "react-dom": "^18",
     "split-type": "^0.3.4",

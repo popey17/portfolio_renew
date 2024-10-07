@@ -25,7 +25,7 @@ function Hero({}) {
           </div>
         </div>       
         <div className={style.canvasContainer}>
-          <Canvas orthographic camera={{ position: [6, -5, 10], zoom: 60 }} resize={{ debounce: 0 }}>
+          <Canvas orthographic camera={{ position: [6, -5, 10], zoom: 60 }} resize={{ debounce: 0 }} >
             <HomeModal/>
             <ambientLight />
             <directionalLight castShadow intensity={0.8} position={[0, 0, 10]}/>

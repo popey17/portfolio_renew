@@ -9,9 +9,13 @@
         margin: 0 auto;
         padding: 9vh 0;
         .sectionTitle {
-          font-size: 8vw;
+          font-size: 7vw;
           color: g.$base_text_color;
           line-height: 1.2;
+          text-align: center;
+          span {
+            display: inline-block;
+          }
         }
         .work {
           display: flex;

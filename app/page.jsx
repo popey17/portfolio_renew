@@ -21,7 +21,7 @@ export default function Home() {
 
   const [heroScroll, setHeroScroll] = useState();
   const [isLoading, setIsLoading] = useState(true);
-  console.log(heroScroll);
+  // console.log(heroScroll);
   
   const main = useRef();
   gsap.registerPlugin(useGSAP);
@@ -31,7 +31,7 @@ export default function Home() {
     ScrollTrigger.create({
       trigger: main.current,
       start: "top top",
-      end: "bottom bottom",
+      end: "bottom 20%",
       onUpdate: (self) => {
         let scrollPercentage = self.progress * 100;
         setHeroScroll(scrollPercentage);
