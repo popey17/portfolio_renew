@@ -21,7 +21,7 @@ export default function Home() {
 
   const [heroScroll, setHeroScroll] = useState();
   const [isLoading, setIsLoading] = useState(true);
-  // console.log(heroScroll);
+  console.log(heroScroll);
   
   const main = useRef();
   gsap.registerPlugin(useGSAP);

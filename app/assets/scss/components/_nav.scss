@@ -8,7 +8,7 @@
   padding: 2rem 3vw 0;
   display: flex;
   justify-content: space-between;
-  z-index: 1;
+  z-index: 4;
   align-items: center;
   &--white {
     .header{
@@ -75,6 +75,7 @@
     }
   }
   &__hamburger {
+    display: none;
     width: 40px;
     height: 24px;
     position: relative;

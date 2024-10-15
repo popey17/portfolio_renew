@@ -7,7 +7,7 @@ import Mainlogo from './Mainlogo';
 function Nav({heroScroll}) {
     
   return (
-    <header className={`${style.header} ${(heroScroll > 8.6 && heroScroll < 42.5) || heroScroll > 99.3 ? style['header--white'] : ''}`}>
+    <header className={`${style.header} ${(heroScroll > 8.9 && heroScroll < 43.5) ? style['header--white'] : ''}`}>
       <div className={style.header__logo}>
         <h1 className={style.header__logo__left}>
           <Mainlogo/>
