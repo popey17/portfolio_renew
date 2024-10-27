@@ -6,6 +6,8 @@ import workImg1 from '@/public/assets/img/page/img_work01.jpg';
 import workImg2 from '@/public/assets/img/page/img_work02.jpg';
 import workImg3 from '@/public/assets/img/page/img_work03.jpg';
 import workImg4 from '@/public/assets/img/page/img_work04.jpg';
+import workImg5 from '@/public/assets/img/page/img_work05.png';
+import workImg6 from '@/public/assets/img/page/img_work06.png';
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -74,8 +76,8 @@ function Work() {
                   3js Explode Text
                 </p>
                 <div className={style.btnContainer}>
-                  <WorkBtn href='#' >Demo</WorkBtn>
-                  <WorkBtn href='#' >Source Code</WorkBtn>
+                  <WorkBtn href='https://3js-explode-text.vercel.app/' >Demo</WorkBtn>
+                  <WorkBtn href='https://github.com/popey17/3js-Explode-Text' >Source Code</WorkBtn>
                 </div>
               </div>
               <div className={style.work__left__item}>
@@ -83,8 +85,8 @@ function Work() {
                   Awward Winning <br/>Image Reveal
                 </p>
                 <div className={style.btnContainer}>
-                <WorkBtn href='#' >Demo</WorkBtn>
-                <WorkBtn href='#' >Source Code</WorkBtn>
+                <WorkBtn href='https://popey17.github.io/hover_preview/' >Demo</WorkBtn>
+                <WorkBtn href='https://github.com/popey17/hover_preview' >Source Code</WorkBtn>
                 </div>
               </div>
               <div className={style.work__left__item}>
@@ -92,8 +94,8 @@ function Work() {
                   3js Dragon
                 </p>
                 <div className={style.btnContainer}>
-                <WorkBtn href='#' >Demo</WorkBtn>
-                <WorkBtn href='#' >Source Code</WorkBtn>
+                <WorkBtn href='https://popey17.github.io/3js-Dragon/' >Demo</WorkBtn>
+                <WorkBtn href='https://github.com/popey17/3js-Dragon' >Source Code</WorkBtn>
                 </div>
               </div>
               <div className={style.work__left__item}>
@@ -101,8 +103,28 @@ function Work() {
                   Patient Record<br/> System
                 </p>
                 <div className={style.btnContainer}>
-                <WorkBtn href='#' >Demo</WorkBtn>
-                <WorkBtn href='#' >Source Code</WorkBtn>
+                <WorkBtn href='https://record.aura.biocaremm.com/patient/' >Demo</WorkBtn>
+                <WorkBtn href='https://github.com/popey17/patients-record' >Source Code</WorkBtn>
+                </div>
+              </div>
+              <div className={style.work__left__item}>
+                <p className={style.title}>
+                  Laravel Api<br></br> Development
+                </p>
+                <div className={style.btnContainer}>
+                <WorkBtn href='https://items.aura.biocaremm.com/api/products' >Api Test Demo</WorkBtn>
+                <WorkBtn href='https://github.com/popey17/Laravel-Api' >Source Code</WorkBtn>
+                </div>
+                <p> Token - 1|laravel_sanctum_CoMODX97Cx3HxqDLo08tA9oZDCRcmO9uHFuTCa5v2e12f732 </p>
+              </div>
+              <div className={style.work__left__item}>
+                <p className={style.title}>
+                  React Ecommerce<br/>
+                  (Api from Laravel)
+                </p>
+                <div className={style.btnContainer}>
+                <WorkBtn href='https://fanciful-stroopwafel-0c576b.netlify.app/' >Demo</WorkBtn>
+                <WorkBtn href='https://github.com/popey17/React-Product-Page-and-Cart' >Source Code</WorkBtn>
                 </div>
               </div>
             </div>
@@ -116,8 +138,14 @@ function Work() {
               <figure ref={(el) => (workImg.current[2] = el)} className={style.work__right__item}>
                 <Image src={workImg3} alt="work" />
               </figure>
-              <figure className={style.work__right__item}>
+              <figure ref={(el) => (workImg.current[3] = el)} className={style.work__right__item}>
                 <Image src={workImg4} alt="work" />
+              </figure>
+              <figure ref={(el) => (workImg.current[4] = el)} className={style.work__right__item}>
+                <Image src={workImg5} alt="work" />
+              </figure>
+              <figure className={style.work__right__item}>
+                <Image src={workImg6} alt="work" />
               </figure>
             </div>
           </div>

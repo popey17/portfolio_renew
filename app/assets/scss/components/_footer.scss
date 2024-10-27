@@ -21,10 +21,16 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @include g.media_queries {
+      flex-direction: column;
+    }
     &__left {
       font-size: 2vw;
       font-weight: 700;
       color: rgb(144, 144, 144);
+      @include g.media_queries {
+        font-size: 4vw;
+      }
       .social {
         display: flex;
         gap: 20px;
@@ -53,6 +59,9 @@
   &__bottom {
     width: 100%;
     text-align: center;
+    p {
+      color: g.$white;
+    }
   }
   .logo {
     font-size: 10vw;

@@ -27,12 +27,18 @@
     line-height: 1;
     padding: 20px 30px 20px 0;
     font-family: g.$font_MPLUS;
+    @include g.media_queries {
+      font-size: 50px;
+    }
     div {
       white-space: nowrap;
       flex-shrink: 0;
       display: flex;
       align-items: center;
       gap: 60px;
+      @include g.media_queries {
+        gap: 30px;
+      }
       .svg-inline--fa {
         font-size: 20px;
         display: block;
@@ -44,6 +50,10 @@
         gap: 30px;
         img {
           filter: invert(1);
+          @include g.media_queries {
+            width: 40px;
+            gap: 15;
+          }
         }
       }
       &::before {

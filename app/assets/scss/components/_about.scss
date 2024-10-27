@@ -72,6 +72,9 @@
         color: g.$white;
         word-break: normal;
         max-width: 70%;
+        @include g.media_queries {
+          max-width: 90%;
+        }
       }
       .sectionTitle {
         @include g.fontsize(16);
