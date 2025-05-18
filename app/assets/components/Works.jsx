@@ -115,7 +115,6 @@ function Work() {
                 <WorkBtn href='https://items.aura.biocaremm.com/api/products' >Api Test Demo</WorkBtn>
                 <WorkBtn href='https://github.com/popey17/Laravel-Api' >Source Code</WorkBtn>
                 </div>
-                <p> Token - 1|laravel_sanctum_CoMODX97Cx3HxqDLo08tA9oZDCRcmO9uHFuTCa5v2e12f732 </p>
               </div>
               <div className={style.work__left__item}>
                 <p className={style.title}>

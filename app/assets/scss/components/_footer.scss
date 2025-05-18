@@ -31,6 +31,10 @@
       @include g.media_queries {
         font-size: 4vw;
       }
+      p {
+        white-space: pre-wrap;
+        word-break: keep-all;
+      }
       .social {
         display: flex;
         gap: 20px;
