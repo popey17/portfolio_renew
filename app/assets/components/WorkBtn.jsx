@@ -6,7 +6,7 @@ import SplitType from 'split-type';
 import { gsap } from "gsap";
 import { useGSAP } from '@gsap/react';
 
-const WorkBtn = ({ children, href }) => {
+const WorkBtn = ({ children, href, target }) => {
   const btnText = useRef();
 
   useGSAP(() => {
@@ -54,7 +54,7 @@ const WorkBtn = ({ children, href }) => {
 
   return (
     <div ref={btnText} className={style.btn}>
-      <Link href={href}>
+      <Link href={href} target={target}>
         {children}
       </Link>
     </div>
