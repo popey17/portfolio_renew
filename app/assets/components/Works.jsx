@@ -74,7 +74,7 @@ function Work() {
             <div className={style.work__left}>
             <div className={style.work__left__item}>
                 <p className={style.title}>
-                  Leo's Personal AI Chatbot
+                  Leo&apos;s Personal AI Chatbot
                 </p>
                 <div className={style.btnContainer}>
                   <WorkBtn href='https://chat.aungmyatkyaw.com/' target='_blank' >Demo</WorkBtn>
